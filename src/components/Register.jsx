@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components'
 
-const StyledLogin = styled.div`
+const StyledRegister = styled.div`
     display: flex;
     flex-direction: column;
 
@@ -11,20 +10,22 @@ const StyledLogin = styled.div`
     }
 `
 
-function Login() {
+function Register() {
     return (
-        <StyledLogin>
-            <h1>Login</h1>
+        <StyledRegister>
+            <h1>Register</h1>
             <label htmlFor="username">Username:</label>
             <input id='username' type="text"/>
             <label htmlFor="password">Password:</label>
             <input id='password' type="text"/>
-            <button>Login</button>
+            <label htmlFor="confirm-password">Confirm Password:</label>
+            <input id='confirm-password' type="text"/>
+            <button>Register</button>
             <div>
-                or <a href="#">register</a>
+                or <a href="#">login</a>
             </div>
-        </StyledLogin>
+        </StyledRegister>
     );
 }
 
-export default Login;
+export default Register;
