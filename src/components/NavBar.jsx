@@ -34,8 +34,8 @@ function NavBar() {
             <div id='logo'>Treasure Quest</div>
             <div id='links'>
                 <ul>
-                    <li>Home</li>
                     <li>About</li>
+                    <li>Register</li>
                     <li>Login</li>
                 </ul>
             </div>
