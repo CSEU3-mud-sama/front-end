@@ -6,8 +6,10 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 
 import About from './pages/About'
-import Play from './pages/Game'
 import Home from './pages/Home'
+import Play from './pages/Game'
+import Login from './pages/Login'
+import Register from './pages/Register'
 
 import GlobalStyle from './styles/GlobalStyle'
 
@@ -32,6 +34,12 @@ function App() {
             </Route>
             <Route path='/about'>
               <About />
+            </Route>
+            <Route path='/login'>
+              <Login />
+            </Route>
+            <Route path='/register'>
+              <Register />
             </Route>
           </Switch>
           <Footer />
