@@ -56,12 +56,20 @@ const RightPanel = styled.div`
     }
 
     button {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: bold;
-        border-radius: 0.5rem;
         padding: 1rem;
         width: 3.5rem;
         height: 3.5rem;
+
+        border-radius: 0.3rem;
+
+        background-color: #9B59B6;
+        color: #F5EEF8;
+
+        :hover {
+            background-color: #AF7AC5;
+        }
     }
 `
 
