@@ -1,14 +1,16 @@
 import React from 'react';
 
+import StyledPanel from '../styles/RightPanel'
+
 function RoomDetail(props) {
     return (
-        <div>
+        <StyledPanel>
             <h2>Room Detail</h2>
-            <p>Name: {props.name}</p>
-            <p>Description: {props.description}</p>
-            <p>Items: {props.items}</p>
-            <p>Players: {props.players}</p>
-        </div>
+            <p><span>Name: </span>{props.name}</p>
+            <p><span>Description: </span>{props.description}</p>
+            <p><span>Items: </span>{props.items}</p>
+            <p><span>Players: </span>{props.players}</p>
+        </StyledPanel>
     );
 }
 
