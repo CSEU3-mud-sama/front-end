@@ -1,6 +1,6 @@
 import React from 'react';
 
-import StyledPanel from '../styles/RightPanel'
+import RightPanel from '../styles/RightPanel'
 
 function ControllerButton(label, callback) {
     return (
@@ -10,10 +10,10 @@ function ControllerButton(label, callback) {
 
 function Controller(callback) {
     return (
-        <StyledPanel>
+        <RightPanel>
             <h2>Controller</h2>
             {['N', 'S', 'E', 'W'].map(label => ControllerButton(label, callback))}
-        </StyledPanel>
+        </RightPanel>
     );
 }
 
