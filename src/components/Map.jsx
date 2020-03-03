@@ -2,9 +2,7 @@ import React from 'react';
 
 function Map() {
     return (
-        <div>
-            This will show the map
-        </div>
+        <div>This will show the map</div>
     );
 }
 
