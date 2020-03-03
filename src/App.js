@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
 
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
@@ -10,12 +11,18 @@ import Home from './pages/Home'
 
 import GlobalStyle from './styles/GlobalStyle'
 
+const StyledApp = styled.div`
+  width: 1024px;
+
+  margin: 0 auto;
+`
+
 function App() {
 
   const isLoggedIn = true;
 
   return (
-      <div className='app'>
+      <StyledApp>
         <GlobalStyle />
         <Router>
           <NavBar />
@@ -29,7 +36,7 @@ function App() {
           </Switch>
           <Footer />
         </Router>
-      </div>
+      </StyledApp>
   );
 }
 
