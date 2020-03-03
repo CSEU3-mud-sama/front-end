@@ -19,7 +19,7 @@ const StyledAbout = styled.div`
     color: #512E5F;
 
     p {
-        margin-top: 2rem;
+        margin: 2rem 0;
     }
 
     #card-container {
