@@ -1,8 +1,14 @@
 import React from 'react';
 
-function RoomDetail() {
+function RoomDetail(props) {
     return (
-        <div>This will show the detail of the room the player is currently in</div>
+        <div>
+            <h2>Room Detail</h2>
+            <p>Name: {props.name}</p>
+            <p>Description: {props.description}</p>
+            <p>Items: {props.items}</p>
+            <p>Players: {props.players}</p>
+        </div>
     );
 }
 

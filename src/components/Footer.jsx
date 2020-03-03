@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
     return (
-        <div>This will display footer details</div>
+        <div>Developed by Amira, Ayomide, Mike and Shaun, Lambda School CS BW1 (March 2020)</div>
     );
 }
 
