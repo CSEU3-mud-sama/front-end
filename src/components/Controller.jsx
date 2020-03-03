@@ -20,6 +20,7 @@ function Controller(callback) {
                     <button>W</button>
                 </div>
             </div>
+            <p><span>Tip: </span>You can also use your arrow keys to navigate the map.</p>
         </RightPanel>
     );
 }

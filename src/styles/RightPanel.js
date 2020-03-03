@@ -18,7 +18,7 @@ const RightPanel = styled.div`
     }
 
     p {
-        margin-bottom: 0.3rem;
+        margin: 0.3rem 0;
     }
 
     p span {

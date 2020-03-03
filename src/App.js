@@ -19,7 +19,7 @@ const StyledApp = styled.div`
 
 function App() {
 
-  const isLoggedIn = true;
+  const isLoggedIn = false;
 
   return (
       <StyledApp>

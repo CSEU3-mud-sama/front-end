@@ -1,11 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+
+import logo from '../images/tq.jpeg';
+
+const StyledHome = styled.div`
+    margin: 3rem 0;
+    background: url(${logo}) no-repeat center center;
+    background-size: cover;
+    height: 40rem;
+`
 
 function Home() {
     return (
-        <div>
-            <h2>Home</h2>
-            <div>Home Page</div>
-        </div>
+        <StyledHome />
     );
 }
 
