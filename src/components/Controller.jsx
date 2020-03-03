@@ -2,17 +2,24 @@ import React from 'react';
 
 import RightPanel from '../styles/RightPanel'
 
-function ControllerButton(label, callback) {
-    return (
-        <button onClick={callback}>{label}</button>
-    )
-}
-
 function Controller(callback) {
     return (
         <RightPanel>
             <h2>Controller</h2>
-            {['N', 'S', 'E', 'W'].map(label => ControllerButton(label, callback))}
+            <div id='controller'>
+                <div id="north">
+                    <button>N</button>
+                </div>
+                <div id="east">
+                    <button>E</button>
+                </div>
+                <div id="south">
+                    <button>S</button>
+                </div>
+                <div id="west">
+                    <button>W</button>
+                </div>
+            </div>
         </RightPanel>
     );
 }
