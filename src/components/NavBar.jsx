@@ -11,6 +11,10 @@ const StyledNavBar = styled.div`
     background: grey;
     color: white;
 
+    a {
+        text-decoration: none;
+    }
+
     h1 {
         font-size: 1.7rem;
         font-weight: bold;
@@ -29,12 +33,28 @@ const StyledNavBar = styled.div`
 function NavBar() {
     return (
         <StyledNavBar>
-            <h1>Logo</h1   >
+            <h1>
+                <Link to='/'>
+                    Logo
+                </Link>
+            </h1>
             <div>
                 <ul>
-                    <li>About</li>
-                    <li>Login</li>
-                    <li>Register</li>
+                    <li>
+                        <Link to='/about'>
+                            About
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={{ pathname: '/login', state: { modal: true }}}>
+                            Login
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={{ pathname: '/register', state: { modal: true }}}>
+                            Register
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </StyledNavBar>
