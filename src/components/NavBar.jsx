@@ -9,14 +9,13 @@ const StyledNavBar = styled.div`
     padding: 0.5rem 1rem;
     
     background: grey;
-    color: white;
 
     a {
         text-decoration: none;
     }
 
     h1 {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: bold;
     }
 
@@ -35,7 +34,7 @@ function NavBar() {
         <StyledNavBar>
             <h1>
                 <Link to='/'>
-                    Logo
+                    Treasure Quest
                 </Link>
             </h1>
             <div>
