@@ -6,10 +6,11 @@ function NavButton(label, callback) {
     )
 }
 
-function Navigation() {
+function Navigation(callback) {
     return (
         <div>
-            {['N', 'S', 'E', 'W'].map(label => NavButton(label))}
+            <h2>Controller</h2>
+            {['N', 'S', 'E', 'W'].map(label => NavButton(label, callback))}
         </div>
     );
 }
