@@ -3,13 +3,14 @@ import styled from 'styled-components';
 
 import NavBar from "./components/NavBar";
 import RoomDetail from "./components/RoomDetail";
-import Navigation from "./components/Navigation";
+import Navigation from "./components/Controller";
 import Map from "./components/Map";
 import Chat from "./components/Chat";
 
 const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 
   #game-container {
     display: flex;
@@ -19,14 +20,18 @@ const StyledApp = styled.div`
       width: 60vw;
       height: 60vw;
       border: 1px red solid;
+      margin: 3px;
+      padding: 5px;
     }
 
     #right {
-      width: 20vw;
+      width: 25vw;
       height: 60vw;
       border: 1px red solid;
       display: flex;
       flex-direction: column;
+      margin: 3px;
+      padding: 5px;
     }
   }
 `
