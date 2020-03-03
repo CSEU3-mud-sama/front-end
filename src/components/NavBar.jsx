@@ -7,11 +7,14 @@ const StyledNavBar = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
+
+    height: 3rem;
     
-    background: grey;
+    background: #512E5F;
 
     a {
         text-decoration: none;
+        color: #F5EEF8;
     }
 
     h1 {
