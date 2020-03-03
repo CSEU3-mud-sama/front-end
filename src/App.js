@@ -1,11 +1,11 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-import NavBar from './components/navbar'
-import RoomDetail from './components/roomDetail'
-import Navigation from './components/navigation'
-import Map from './components/map'
-import Chat from './components/chat'
+import NavBar from "./components/NavBar";
+import RoomDetail from "./components/RoomDetail";
+import Navigation from "./components/Navigation";
+import Map from "./components/Map";
+import Chat from "./components/Chat";
 
 function App() {
   return (
