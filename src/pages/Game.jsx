@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Map from './Map'
-import RoomDetail from './RoomDetail'
-import Controller from './Controller'
-import Chat from './Chat'
+import Map from '../components/Map'
+import RoomDetail from '../components/RoomDetail'
+import Controller from '../components/Controller'
+import Chat from '../components/Chat'
 
 function Game() {
     return (
