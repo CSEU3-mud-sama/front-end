@@ -2,7 +2,10 @@ import React from 'react';
 
 function Chat() {
     return (
-        <div>Stretch: This is the chat window to chat with other players</div>
+        <div>
+            <h2>Chat</h2>
+            <div>Stretch: This will display chat with other players</div>
+        </div>
     );
 }
 
