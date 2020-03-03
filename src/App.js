@@ -1,8 +1,14 @@
 import React from "react";
 
+import NavBar from './components/NavBar'
+import Game from './components/Game'
+
 function App() {
   return (
-    <div>This will show the app</div>
+    <div className='app'>
+      <NavBar />
+      <Game />
+    </div>
   );
 }
 
