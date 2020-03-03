@@ -1,8 +1,22 @@
 import React from 'react';
 
+import Map from './Map'
+import RoomDetail from './RoomDetail'
+import Controller from './Controller'
+import Chat from './Chat'
+
 function Game() {
     return (
-        <div>This is the container for all the game elements</div>
+        <div>
+            <div>
+                <Map />
+            </div>
+            <div>
+                <RoomDetail />
+                <Controller />
+                <Chat />
+            </div>
+        </div>
     );
 }
 

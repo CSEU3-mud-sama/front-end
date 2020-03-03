@@ -2,7 +2,16 @@ import React from 'react';
 
 function NavBar() {
     return (
-        <div>This will show the navbar components</div>
+        <div>
+            <div>Logo</div>
+            <div>
+                <ul>
+                    <li>About</li>
+                    <li>Login</li>
+                    <li>Register</li>
+                </ul>
+            </div>
+        </div>
     );
 }
 
