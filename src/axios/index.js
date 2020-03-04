@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const baseURL = 'https://lambda-mud-test.herokuapp.com/';
+import baseURL from './config';
 
 function axiosWithAuth() {
     return axios.create({

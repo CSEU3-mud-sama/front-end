@@ -21,7 +21,7 @@ const StyledApp = styled.div`
 
 function App() {
 
-  const isLoggedIn = true;
+  const isLoggedIn = localStorage.getItem('key') ? true: false;
 
   return (
       <StyledApp>
