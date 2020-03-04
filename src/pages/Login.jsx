@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import baseURL from '../axios/config';
 
 import LoginRegister from '../styles/LoginRegister'
 
-function Login() {
+function Login({ history, setIsLoggedIn }) {
     const [formValues, setFormValues] = useState({});
 
     const handleChange = e => {
@@ -20,7 +21,9 @@ function Login() {
         axios
             .post(`${baseURL}/api/login/`, formValues)
             .then(res => {
-                localStorage.setItem('key', res.data.key)
+                localStorage.setItem('key', res.data.key);
+                setIsLoggedIn(true);
+                history.push('/');
             })
             .catch(err => {
                 console.log(err)
@@ -42,4 +45,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default withRouter(Login);

@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import React, { useState }  from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import baseURL from '../axios/config';
 
 import LoginRegister from '../styles/LoginRegister'
 
-function Register() {
+function Register({ history, setIsLoggedIn }) {
     const [formValues, setFormValues] = useState({});
 
     const handleChange = e => {
@@ -20,7 +21,9 @@ function Register() {
         axios
             .post(`${baseURL}/api/registration/`, formValues)
             .then(res => {
-                localStorage.setItem('key', res.data.key)
+                localStorage.setItem('key', res.data.key);
+                setIsLoggedIn(true);
+                history.push('/');
             })
             .catch(err => {
                 console.log(err)
@@ -44,4 +47,4 @@ function Register() {
     );
 }
 
-export default Register;
+export default withRouter(Register);

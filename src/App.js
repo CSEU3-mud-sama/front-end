@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -21,13 +21,13 @@ const StyledApp = styled.div`
 
 function App() {
 
-  const isLoggedIn = localStorage.getItem('key') ? true: false;
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
       <StyledApp>
         <GlobalStyle />
         <Router>
-          <NavBar />
+          <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
           <Switch>
             <Route exact path='/'>
               {isLoggedIn ? <Play /> : <Home />}
@@ -36,10 +36,10 @@ function App() {
               <About />
             </Route>
             <Route path='/login'>
-              <Login />
+              <Login setIsLoggedIn={setIsLoggedIn} />
             </Route>
             <Route path='/register'>
-              <Register />
+              <Register setIsLoggedIn={setIsLoggedIn} />
             </Route>
           </Switch>
           <Footer />

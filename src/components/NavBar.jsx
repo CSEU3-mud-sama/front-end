@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
@@ -32,7 +33,7 @@ const StyledNavBar = styled.div`
     }
 `
 
-function NavBar() {
+function NavBar({ isLoggedIn, setIsLoggedIn }) {
     return (
         <StyledNavBar>
             <h1>
@@ -47,16 +48,27 @@ function NavBar() {
                             About
                         </Link>
                     </li>
-                    <li>
-                        <Link to={{ pathname: '/login', state: { modal: true }}}>
-                            Login
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to={{ pathname: '/register', state: { modal: true }}}>
-                            Register
-                        </Link>
-                    </li>
+                    {
+                        isLoggedIn 
+                        ? <li>
+                            <Link to='/login' onClick={() => {
+                                localStorage.removeItem('key');
+                                setIsLoggedIn(false);
+                            }} >Logout</Link>
+                        </li>
+                        : <>
+                            <li>
+                                <Link to='/login'>
+                                    Login
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to='/register'>
+                                    Register
+                                </Link>
+                            </li>
+                        </>
+                    }
                 </ul>
             </div>
         </StyledNavBar>
