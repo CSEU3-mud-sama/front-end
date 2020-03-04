@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState }  from 'react';
+import React, { useState, useEffect }  from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import baseURL from '../axios/config';
@@ -29,6 +29,18 @@ function Register({ history, setIsLoggedIn }) {
                 alert(err.message);
             });
     }
+
+    useEffect(() => {
+        const listener = e => {
+            if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+                return handleSubmit(e);
+            }
+        }
+        document.addEventListener('keydown', listener);
+        return () => {
+            document.removeEventListener('keydown', listener);
+        }
+    });
 
     return (
         <LoginRegister>
