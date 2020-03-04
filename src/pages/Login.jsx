@@ -26,7 +26,7 @@ function Login({ history, setIsLoggedIn }) {
                 history.push('/');
             })
             .catch(err => {
-                console.log(err)
+                alert(err.message);
             });
     }
 
