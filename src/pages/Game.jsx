@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import Map from '../components/Map'
@@ -22,11 +22,32 @@ const StyledGame = styled.div`
         flex-direction: column;
     }
 `
-const cb = e => {
-    alert(e.target.name);
-}
 
 function Game() {
+    const cb = direction => {
+        alert(direction);
+    }
+
+    useEffect(() => {
+        const listener = e => {
+            if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+                if (e.key === 'ArrowUp') {
+                    return cb('N');
+                } else if (e.key === 'ArrowDown') {
+                    return cb('S');
+                } else if (e.key === 'ArrowLeft') {
+                    return cb('W')
+                } else if (e.key === 'ArrowRight') {
+                    return cb('E')
+                }
+            }
+        }
+        document.addEventListener('keydown', listener);
+        return () => {
+            document.removeEventListener('keydown', listener);
+        }
+    });
+
     return (
         <StyledGame>
             <div id='left'>

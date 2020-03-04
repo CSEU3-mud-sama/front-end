@@ -5,7 +5,7 @@ import RightPanel from '../styles/RightPanel'
 
 function Controller({ callback }) {
     const handleClick = e => {
-        callback(e);
+        callback(e.target.name);
     }
 
     return (
