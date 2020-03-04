@@ -22,6 +22,9 @@ const StyledGame = styled.div`
         flex-direction: column;
     }
 `
+const cb = e => {
+    alert(e.target.name);
+}
 
 function Game() {
     return (
@@ -31,7 +34,7 @@ function Game() {
             </div>
             <div id='right'>
                 <RoomDetail />
-                <Controller />
+                <Controller callback={cb} />
                 <Chat />
             </div>
         </StyledGame>

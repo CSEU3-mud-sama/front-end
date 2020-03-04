@@ -1,26 +1,30 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 import RightPanel from '../styles/RightPanel'
 
-function Controller(callback) {
+function Controller({ callback }) {
+    const handleClick = e => {
+        callback(e);
+    }
+
     return (
         <RightPanel>
             <h2>Controller</h2>
             <div id='controller'>
                 <div id="north">
-                    <button>N</button>
+                    <button name='N' onClick={handleClick} >N</button>
                 </div>
                 <div id="east">
-                    <button>E</button>
+                    <button name='E' onClick={handleClick} >E</button>
                 </div>
                 <div id="south">
-                    <button>S</button>
+                    <button name='S' onClick={handleClick} >S</button>
                 </div>
                 <div id="west">
-                    <button>W</button>
+                    <button name='W' onClick={handleClick} >W</button>
                 </div>
             </div>
-            <p><span>Tip: </span>You can also use your arrow keys to navigate the map.</p>
         </RightPanel>
     );
 }
