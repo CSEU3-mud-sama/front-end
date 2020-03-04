@@ -49,6 +49,11 @@ const GlobalStyle = createGlobalStyle`
         border-collapse: collapse;
         border-spacing: 0;
     }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        font-size: 90%;
+    }
 `
 
 export default GlobalStyle;

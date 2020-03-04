@@ -1,8 +1,12 @@
 import React from 'react';
 
-function Map() {
+import LeftPanel from '../styles/LeftPanel'
+
+function Map(props) {
     return (
-        <div>This will show the map</div>
+        <LeftPanel>
+            <h2>Map</h2>
+        </LeftPanel>
     );
 }
 

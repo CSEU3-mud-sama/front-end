@@ -1,8 +1,16 @@
 import React from 'react';
 
-function RoomDetail() {
+import RightPanel from '../styles/RightPanel'
+
+function RoomDetail(props) {
     return (
-        <div>This will show the detail of the room the player is currently in</div>
+        <RightPanel>
+            <h2>Room Detail</h2>
+            <p><span>Name: </span>{props.name}</p>
+            <p><span>Description: </span>{props.description}</p>
+            <p><span>Items: </span>{props.items}</p>
+            <p><span>Players: </span>{props.players}</p>
+        </RightPanel>
     );
 }
 
