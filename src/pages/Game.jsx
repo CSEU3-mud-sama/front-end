@@ -27,6 +27,7 @@ const StyledGame = styled.div`
 function Game() {
     const [mapData, setMapData] = useState([]);
     const [currentRoom, setCurrentRoom] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const listener = e => {
@@ -49,10 +50,12 @@ function Game() {
     });
 
     useEffect(() => {
+        setIsLoading(true);
         axiosWithAuth()
             .get('/api/adv/init')
             .then(res => {
                 setCurrentRoom(res.data);
+                setIsLoading(false);
             })
             .catch(err => {
                 alert(err.message);
@@ -60,10 +63,12 @@ function Game() {
     }, []);
 
     useEffect(() => {
+        setIsLoading(true);
         axiosWithAuth()
             .get('/api/adv/rooms')
             .then(res => {
                 setMapData(JSON.parse(res.data.rooms));
+                setIsLoading(false);
             })
             .catch(err => {
                 alert(err.message);
@@ -72,10 +77,12 @@ function Game() {
 
 
     const cb = direction => {
+        setIsLoading(true);
         axiosWithAuth()
             .post('/api/adv/move', { direction })
             .then(res => {
                 setCurrentRoom(res.data)
+                setIsLoading(false);
             })
             .catch(err => {
                 alert(err.message);
@@ -85,7 +92,7 @@ function Game() {
     return (
         <StyledGame>
             <div id='left'>
-                <Map mapData={mapData} currentRoom={currentRoom} />
+                <Map mapData={mapData} currentRoom={currentRoom} isLoading={isLoading} />
             </div>
             <div id='right'>
                 <RoomDetail currentRoom={currentRoom} />
