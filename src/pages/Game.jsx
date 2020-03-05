@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import axiosWithAuth from '../axios'
 
 import Map from '../components/Map'
 import RoomDetail from '../components/RoomDetail'
@@ -24,21 +25,21 @@ const StyledGame = styled.div`
 `
 
 function Game() {
-    const cb = direction => {
-        alert(direction);
-    }
+    const [mapData, setMapData] = useState([]);
+    const [currentRoom, setCurrentRoom] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const listener = e => {
             if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
                 if (e.key === 'ArrowUp') {
-                    return cb('N');
+                    return cb('n');
                 } else if (e.key === 'ArrowDown') {
-                    return cb('S');
+                    return cb('s');
                 } else if (e.key === 'ArrowLeft') {
-                    return cb('W')
+                    return cb('w')
                 } else if (e.key === 'ArrowRight') {
-                    return cb('E')
+                    return cb('e')
                 }
             }
         }
@@ -48,13 +49,53 @@ function Game() {
         }
     });
 
+    useEffect(() => {
+        setIsLoading(true);
+        axiosWithAuth()
+            .get('/api/adv/init')
+            .then(res => {
+                setCurrentRoom(res.data);
+                setIsLoading(false);
+            })
+            .catch(err => {
+                alert(err.message);
+            })
+    }, []);
+
+    useEffect(() => {
+        setIsLoading(true);
+        axiosWithAuth()
+            .get('/api/adv/rooms')
+            .then(res => {
+                setMapData(JSON.parse(res.data.rooms));
+                setIsLoading(false);
+            })
+            .catch(err => {
+                alert(err.message);
+            })
+    }, []);
+
+
+    const cb = direction => {
+        setIsLoading(true);
+        axiosWithAuth()
+            .post('/api/adv/move', { direction })
+            .then(res => {
+                setCurrentRoom(res.data)
+                setIsLoading(false);
+            })
+            .catch(err => {
+                alert(err.message);
+            })
+    }
+
     return (
         <StyledGame>
             <div id='left'>
-                <Map />
+                <Map mapData={mapData} currentRoom={currentRoom} isLoading={isLoading} />
             </div>
             <div id='right'>
-                <RoomDetail />
+                <RoomDetail currentRoom={currentRoom} />
                 <Controller callback={cb} />
                 <Chat />
             </div>

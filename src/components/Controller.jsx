@@ -13,16 +13,16 @@ function Controller({ callback }) {
             <h2>Controller</h2>
             <div id='controller'>
                 <div id="north">
-                    <button name='N' onClick={handleClick} >N</button>
+                    <button name='n' onClick={handleClick} >N</button>
                 </div>
                 <div id="east">
-                    <button name='E' onClick={handleClick} >E</button>
+                    <button name='e' onClick={handleClick} >E</button>
                 </div>
                 <div id="south">
-                    <button name='S' onClick={handleClick} >S</button>
+                    <button name='s' onClick={handleClick} >S</button>
                 </div>
                 <div id="west">
-                    <button name='W' onClick={handleClick} >W</button>
+                    <button name='w' onClick={handleClick} >W</button>
                 </div>
             </div>
         </RightPanel>
