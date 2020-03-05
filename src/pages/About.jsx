@@ -55,23 +55,19 @@ const StyledAbout = styled.div`
 const data = [
     {
         name: 'Amira',
-        github: 'https://github.com',
-        linkedin: 'https://linkedin.com',
+        github: 'https://github.com/amxra',
     },
     {
         name: 'Ayomide',
-        github: 'https://github.com',
-        linkedin: 'https://linkedin.com',
+        github: 'https://github.com/Ayormeday',
     },
     {
         name: 'Mike',
-        github: 'https://github.com',
-        linkedin: 'https://linkedin.com',
+        github: 'https://github.com/mikeattara',
     },
     {
         name: 'Shaun',
-        github: 'https://github.com',
-        linkedin: 'https://linkedin.com',
+        github: 'https://github.com/shaunorpen',
     },
 ]
 
@@ -80,7 +76,6 @@ function Card({name, github, linkedin}) {
         <div className='card' key={name}>
             <h2>{name}</h2>
             <a href={github}>GitHub</a>
-            <a href={linkedin}>LinkedIn</a>
         </div>
     )
 }
