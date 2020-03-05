@@ -30,7 +30,7 @@ function App() {
           <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
           <Switch>
             <Route exact path='/'>
-              {isLoggedIn ? <Play /> : <Play />}
+              {isLoggedIn ? <Play /> : <Home />}
             </Route>
             <Route path='/about'>
               <About />
