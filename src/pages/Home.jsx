@@ -6,7 +6,7 @@ import logo from '../images/tq.jpeg';
 const StyledHome = styled.div`
     margin: 3rem 0;
     background: url(${logo}) no-repeat center center;
-    background-size: contain;
+    background-size: 35rem;
     height: 40rem;
 `
 
