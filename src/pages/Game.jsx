@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import axiosWithAuth from '../axios'
 
 import Map from '../components/Map'
 import RoomDetail from '../components/RoomDetail'
@@ -24,6 +25,9 @@ const StyledGame = styled.div`
 `
 
 function Game() {
+    const [mapData, setMapData] = useState({});
+    const [currentRoom, setCurrentRoom] = useState({});
+
     const cb = direction => {
         alert(direction);
     }
@@ -48,13 +52,35 @@ function Game() {
         }
     });
 
+    useEffect(() => {
+        axiosWithAuth()
+            .get('/api/adv/init')
+            .then(res => {
+                setCurrentRoom(res.data);
+            })
+            .catch(err => {
+                alert(err.message);
+            })
+    }, []);
+
+    useEffect(() => {
+        axiosWithAuth()
+            .get('/api/adv/rooms')
+            .then(res => {
+                setMapData(JSON.parse(res.data.rooms));
+            })
+            .catch(err => {
+                alert(err.message);
+            })
+    }, []);
+
     return (
         <StyledGame>
             <div id='left'>
-                <Map />
+                <Map mapData={mapData} currentRoom={currentRoom} />
             </div>
             <div id='right'>
-                <RoomDetail />
+                <RoomDetail currentRoom={currentRoom} />
                 <Controller callback={cb} />
                 <Chat />
             </div>
