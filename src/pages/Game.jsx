@@ -28,21 +28,17 @@ function Game() {
     const [mapData, setMapData] = useState([]);
     const [currentRoom, setCurrentRoom] = useState({});
 
-    const cb = direction => {
-        alert(direction);
-    }
-
     useEffect(() => {
         const listener = e => {
             if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
                 if (e.key === 'ArrowUp') {
-                    return cb('N');
+                    return cb('n');
                 } else if (e.key === 'ArrowDown') {
-                    return cb('S');
+                    return cb('s');
                 } else if (e.key === 'ArrowLeft') {
-                    return cb('W')
+                    return cb('w')
                 } else if (e.key === 'ArrowRight') {
-                    return cb('E')
+                    return cb('e')
                 }
             }
         }
@@ -73,6 +69,18 @@ function Game() {
                 alert(err.message);
             })
     }, []);
+
+
+    const cb = direction => {
+        axiosWithAuth()
+            .post('/api/adv/move', { direction })
+            .then(res => {
+                setCurrentRoom(res.data)
+            })
+            .catch(err => {
+                alert(err.message);
+            })
+    }
 
     return (
         <StyledGame>

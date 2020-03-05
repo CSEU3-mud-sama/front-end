@@ -15,7 +15,7 @@ const StyledMap = styled.div`
     }
 
     .cell {
-        flex-grow: 1;
+        width: 11rem;
         text-align: center;
         line-height: 11rem;
     }
