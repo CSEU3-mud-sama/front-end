@@ -25,7 +25,7 @@ const StyledGame = styled.div`
 `
 
 function Game() {
-    const [mapData, setMapData] = useState({});
+    const [mapData, setMapData] = useState([]);
     const [currentRoom, setCurrentRoom] = useState({});
 
     const cb = direction => {
