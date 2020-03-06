@@ -39,6 +39,7 @@ const StyledMap = styled.div`
 `
 
 function Map( { currentRoom, mapData, isLoading } ) {
+    debugger
     const roomData = {}
 
     mapData.map(mapItem => roomData[mapItem.pk] = {

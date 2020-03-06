@@ -65,14 +65,12 @@ function Game() {
     useEffect(() => {
         setIsLoading(true);
         axiosWithAuth()
-            .get('/api/adv/rooms')
+            .get('/api/adv/rooms/')
             .then(res => {
-                debugger
-                setMapData(JSON.parse(res.data.rooms));
+                setMapData(res.data);
                 setIsLoading(false);
             })
             .catch(err => {
-                debugger
                 alert(err.message);
             })
     }, []);
