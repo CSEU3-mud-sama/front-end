@@ -71,7 +71,7 @@ const data = [
     },
 ]
 
-function Card({name, github, linkedin}) {
+function Card({name, github }) {
     return (
         <div className='card' key={name}>
             <h2>{name}</h2>
