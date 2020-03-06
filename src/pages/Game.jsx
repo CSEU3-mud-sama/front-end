@@ -67,10 +67,12 @@ function Game() {
         axiosWithAuth()
             .get('/api/adv/rooms')
             .then(res => {
+                debugger
                 setMapData(JSON.parse(res.data.rooms));
                 setIsLoading(false);
             })
             .catch(err => {
+                debugger
                 alert(err.message);
             })
     }, []);
