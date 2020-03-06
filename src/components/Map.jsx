@@ -39,17 +39,16 @@ const StyledMap = styled.div`
 `
 
 function Map( { currentRoom, mapData, isLoading } ) {
-    debugger
     const roomData = {}
 
-    mapData.map(mapItem => roomData[mapItem.pk] = {
-                title: mapItem.fields.title, 
-                n: mapItem.fields.n_to, 
-                s: mapItem.fields.s_to, 
-                e: mapItem.fields.e_to, 
-                w: mapItem.fields.w_to
+    mapData.map(mapItem => roomData[mapItem.id] = {
+                title: mapItem.title, 
+                n: mapItem.n_to, 
+                s: mapItem.s_to, 
+                e: mapItem.e_to, 
+                w: mapItem.w_to
             });
-        
+
     const currentRoomId = Number(Object.keys(roomData).filter(key => roomData[key].title === currentRoom.title)[0])
 
     const north = currentRoomId ? roomData[currentRoomId].n : null;
